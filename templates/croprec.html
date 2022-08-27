@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+{% block title %}
+Crop Recommender
+{% endblock title %}
+
+
+{% block body %}
+
+<div style="background-image: url('static/dark.jpg');background-size: auto 100%;" class = 'container-fluid'>
+<table style="width:100%;margin:0 auto;">
+<tr>
+<td>
+    <div class = 'container mx-6 my-2'>
+    <h2 style="font-weight: bold;">Crop Recommendation System</h2>
+    <br>
+    <h3>Enter Parameters Below</h3>
+    </div>
+    <br>
+    <div class = 'container my-4'>
+        <form method='post' action='/croprec' autocomplete='off'>
+            {% csrf_token %}
+            <div class="row g-2">
+                <div class="col-sm-2">
+                <h5>Nitrogen</h5>
+                </div>
+                <div class="col-sm-2">
+                <input type="number" class="form-control" placeholder="" aria-label="" name='nitrogen'>
+                </div>
+            </div>
+            <br>
+            <div class="row g-2">
+                <div class="col-sm-2">
+                <h5>Phosphorus</h5>
+                </div>
+                <div class="col-sm-2">
+                <input type="number" class="form-control" placeholder="" aria-label="" name='phosphorus'>
+                </div>
+            </div>
+            <br>
+            <div class="row g-2">
+                <div class="col-sm-2">
+                <h5>Potassium</h5>
+                </div>
+                <div class="col-sm-2">
+                <input type="number" class="form-control" placeholder="" aria-label="" name='potassium'>
+                </div>
+            </div>
+            <br>
+
+            <div class="row g-2">
+                <div class="col-sm-2">
+                <h5>Temperature(℃)</h5>
+                </div>
+                <div class="col-sm-2">
+                <input type="number" class="form-control" placeholder="" aria-label="" name='temp'>
+                </div>
+            </div>
+            <br>
+
+            <div class="row g-2">
+                <div class="col-sm-2">
+                <h5>Humidity</h5>
+                </div>
+                <div class="col-sm-2">
+                <input type="number" class="form-control" placeholder="" aria-label="" name='hum'>
+                </div>
+            </div>
+            <br>
+
+            <div class="row g-2">
+                <div class="col-sm-2">
+                <h5>pH value</h5>
+                </div>
+                <div class="col-sm-2">
+                    <select class="form-select" name='ph' aria-label="Default select example" >
+                        <option selected>pH</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                    </select>
+                </div>
+            </div>
+            <br>
+
+            <div class="row g-2">
+                <div class="col-sm-2">
+                <h5>Rainfall(in mm)</h5>
+                </div>
+                <div class="col-sm-2">
+                <input type="number" class="form-control" placeholder="" aria-label="" name='rainfall'>
+                </div>
+            </div>
+            <br>
+
+            <div class='col-sm-12'>
+            <table style=''><tr><td>
+                <button type="submit" class="btn btn-primary">Predict</button>
+                </td></tr>
+            </table>
+            </div>
+        <form method='post'>
+        <br>
+    </div>
+</td>
+</tr>
+<tr>
+<td>
+    {% if name %}
+    <div class='container mx-6 my-2'>
+    <div class="card" style="width: 80rem;">
+        <div class="card-header" style="font-weight: bold;background-color:#adadad;">{{name}}</div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" style='text-align: justify;'>{{info}}</li>
+          <li class="list-group-item"style='text-align: justify;'>{{d}}</li>
+        </ul>
+    </div>
+    </div>
+    {% endif %}
+</td>
+</tr>
+</table>
+</div>
+{% endblock body %}

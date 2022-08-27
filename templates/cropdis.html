@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block title %}
+Crop Disease Detector
+{% endblock title %}
+
+{% block body %}
+<div class = 'container-fluid' style="background-image: url('static/cropdis.jpg');height:625px;">
+    <table style='width:100%;margin-left:10px;'>
+    <tr>
+    <td>
+    <form method='post' action='/cropdis' enctype='multipart/form-data'>
+    {% csrf_token %}
+    <div style='width:1400px;'>
+        <h4 for="formFileLg" class="form-label" style="font-weight: bold;margin-left:570px;margin-top:10px"> Crop Disease Detector</h4>
+        <br>
+        <table style='width:30%;margin-left:auto;margin-right:auto;'><tr><td>
+        <input required class="form-control form-control-lg" id="formFileLg" name="imgupload" accept="image/*" type="file"></td>
+        <td>
+        <div class='container'>
+            <button type="submit" class="btn btn-primary">Detect</button>
+        </div>
+        </td>
+        </tr>
+        </table>
+    </div>
+    <form method='post'>
+    <br>
+    <table>
+    <tr>
+    <td style='width:20%;'>
+        <div class='container'>
+        <div class="card" style="width:350px;margin:auto;">
+        {% load static %}
+        {% if image %}
+        <img src="{{ image.img.url }}" alt="...">
+        <h5 class="card-title" style='text-align:center;'>{{cls}}</h5>
+        {% endif %}
+        </div>
+        </div>
+        </td>
+    <td style='width:100%;'>
+    <div class="card" style="width:90%;">
+        {% if title %}
+        <div class="card-body">
+            <h5 class="card-title" style="font-weight: bold;">{{title}}</h5>
+            <p class="card-text" style='text-align: justify;'>{{info}}</p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <h5 style="font-weight: bold;">Control Methods</h5>
+                <p class="card-text" style='text-align: justify;'>{{control}}</p>
+            </li>
+          </ul>
+        {% endif %}
+    </div>
+    </td>
+    </tr>
+    </table>
+</div>
+{% endblock body %}

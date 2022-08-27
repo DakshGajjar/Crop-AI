@@ -1,0 +1,182 @@
+{% extends 'base.html' %} 
+{% block title %} Home {% endblock title %} 
+
+{% block style %}{% endblock style %}
+
+{% block body %}
+<div class="container-fluid px-0">
+  <div
+    id="carouselExampleCaptions"
+    class="carousel slide"
+    data-bs-ride="carousel"
+  >
+    <div class="carousel-indicators">
+      <button
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide-to="0"
+        class="active"
+        aria-current="true"
+        aria-label="Slide 1"
+      ></button>
+
+      <button
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide-to="1"
+        aria-label="Slide 2"
+      ></button>
+
+      <button
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide-to="2"
+        aria-label="Slide 3"
+      ></button>
+    </div>
+
+    <div class="carousel-inner">
+
+      <div class="carousel-item active">
+        <img src="static/1.jpg" class="d-block w-100" alt="..." />
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Agriculture</h5>
+          <p>
+            Agriculture is the primary source of livelihood for about 58% of
+            India’s population. Gross value added by agriculture, forestry and
+            fishing was estimated at Rs. 19.48 lakh crore in FY20.The share of
+            agriculture in gross domestic product (GDP) is 19.9 percent in
+            2020-21.Emerging concept of AI that makes agriculture more efficient
+            and effective with the help of high-precision algorithms.
+          </p>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="static/2.jpg" class="d-block w-100" alt="..." />
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Artificial Intelligence</h5>
+          <p>
+            Machine learning is everywhere throughout the whole growing and
+            harvesting cycle. It begins with a crop prediction - from the soil
+            preparation, seeds breeding and water feed measurement - and it ends
+            when robots pick up the harvest determining the ripeness with the
+            help of computer vision.
+          </p>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="static/3.jpg" class="d-block w-100" alt="..." />
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Crop AI</h5>
+          <p>
+            Crop AI provides functionalitites that helps farmer to harvest efficiently with the help of Artificial Intelligence and Machine Learning.
+          </p>
+        </div>
+      </div>
+
+    </div>
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#carouselExampleCaptions"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#carouselExampleCaptions"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <div class="container-fluid my-4 px-4" style="background-image: url('static/bg6.jpg');">
+    <table style="width:80%;margin-left: auto; margin-right: auto;">
+      <tr>
+        
+        <td>
+          <div class="card" style="width: 18rem;">
+            <img
+              src="static/bg1.jpg"
+              class="card-img-top"
+              alt="..."
+              style="width: auto; height: 220px;"
+            />
+            <div class="card-body" style='text-align:justify'>
+              <h5 class="card-title">Crop Recommender</h5>
+              <p class="card-text">
+                Crop Recommendation System that predict crops from the given
+                user input
+              </p>
+              <a href="/croprec" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </td>
+
+        <td>
+          <div class="card my-4" style="width: 18rem; margin-left: 20px">
+            <img
+              src="static/bg2.jpg"
+              class="card-img-top"
+              alt="..."
+              style="width: auto; height: 220px;"
+            />
+            <div class="card-body" style='text-align:justify'>
+              <h5 class="card-title">Crop Disease Detector</h5>
+              <p class="card-text">
+                It uses convolutional neural network to predict diseased crop by
+                image of crop leaves.
+              </p>
+              <a href="/cropdis" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </td>
+        
+        <td>
+          <div class="card my-4" style="width: 18rem; margin-left: 20px">
+            <img
+              src="static/bg5.jpg"
+              class="card-img-top"
+              alt="..."
+              style="width: auto; height: 220px;"
+            />
+            <div class="card-body" style='text-align:justify'>
+              <h5 class="card-title">Crop Pest Identifier</h5>
+              <p class="card-text">
+                It identifies insect species by extracting edges and features from an image of a specific insect pests.
+              </p>
+              <a href="/pests" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </td>
+
+        <td>
+          <div class="card my-4" style="width: 18rem; margin-left: 20px">
+            <img
+              src="static/bg4.jpg"
+              class="card-img-top"
+              alt="..."
+              style="width: auto; height: 220px;"
+            />
+            <div class="card-body" style='text-align:justify'>
+              <h5 class="card-title">Crop Yield Estimator</h5>
+              <p class="card-text">
+                Gives require price,water and growing period by crop name and crop amount.
+              </p>
+              <a href="/cropyield" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+{% endblock body %}

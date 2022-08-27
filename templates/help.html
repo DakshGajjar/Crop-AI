@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% block title %}
+Help
+{% endblock title %}
+
+{% block body %}
+<div class = 'container-fluid my-4'>
+  <div class = 'container'>
+    <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Crop Recommender
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <strong>Input Condtitions</strong>: In order to get crop the parameters such as nitrogen,phosphurus and all that needs to be inserted an appropriate input that satifies certain constrains like ph should be less than 14,the N,P,K measurements must be less than 100 as well as location should be a string.
+              <hr>For Example : Nitrogen = 89, Phosporus = 78 , Potassium = 52 , PH = 9 , Rainfall = 200 , city = Ahmedabad . . . 
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <br>
+
+    <div class = 'container'>
+    <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+              Crop Yield Estimator
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <strong>Input Condtitions</strong>: In order to get price,water and growing period of crop the parameter quintal must be a digit.
+              <hr>For Example :  quintal = 12,15 . . . 
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <br>
+
+    <div class = 'container'>
+      <div class="accordion" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                Crop Disease Detector / Crop Pests Identifier
+              </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse show" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>Input Condtitions</strong>:  To get pest / disease information a valid jpg,png or jpeg image is nedded to be uploaded which should be of related object
+                <hr>For Example :  Image of leaf of ill plant or and image of insect in appropriate format.
+            </div>
+          </div>
+      </div>
+    </div>
+    </div>
+</div>
+{% endblock body %}

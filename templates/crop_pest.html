@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block title %}
+Crop Pest Identifier
+{% endblock title %}
+
+{% block body %}
+<div class = 'container-fluid' style="background-image: url('static/croppest.png');height:625px;">
+    <div>
+    <table style='width:100%;margin-left:10px;'>
+    <tr>
+    <td>
+    <form method='post' action='/pests' enctype='multipart/form-data'>
+    {% csrf_token %}
+    <div style='width:1400px;'>
+        <h4 for="formFileLg" class="form-label" style="font-weight: bold;margin-left:570px;margin-top:10px"> Crop Pests Identifier</h4>
+        <br>
+        <table style='width:30%;margin-left:auto;margin-right:auto;'><tr><td>
+        <input required class="form-control form-control-lg" id="formFileLg" name="pest" accept="image/*" type="file"></td>
+        <td><div class='container'>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div></td>
+    </tr></table>
+    </div>
+    <form method='post'>
+    <br>
+    <table>
+    <tr>
+    <td style='width:20%;'>
+        <div class='container'>
+        <div class="card" style="width:350px;margin:auto;">
+        {% load static %}
+        {% if image %}
+        <img src="{{ image.pimg.url }}" alt="...">
+        <h5 class="card-title" style='text-align:center;'>{{cls}}</h5>
+        {% endif %}
+        </div>
+        </div>
+        </td>
+    <td style='width:100%;'>
+    <div class="card" style="width:90%;">
+        {% if title %}
+        <div class="card-body">
+            <h5 class="card-title" style="font-weight: bold;">{{title}}</h5>
+            <p class="card-text" style='text-align: justify;'>{{info}}</p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <h5 style="font-weight: bold;">Control Methods</h5>
+                <p class="card-text" style='text-align: justify;'>{{ctrl}}</p>
+            </li>
+          </ul>
+          
+          <!--<div class="card-body">
+            <a href="#" class="card-link">Card link</a>
+            <a href="#" class="card-link">Another link</a>
+          </div>-->
+        {% endif %}
+    </div>
+    </td></tr>
+    </table>
+    <br>
+</div>
+</div>
+{% endblock body %}

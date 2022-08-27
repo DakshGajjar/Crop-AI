@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block title %}
+Crop Yield Predictor
+{% endblock title %}
+
+{% block body %}
+<div class = 'container-fluid' style="background-image: url('static/bg3.jpg');height:500px;">
+  <div class = 'container-fluid my-4 py-4' >
+    <h2 style="font-weight: bold;text-align:center;">Crop Yield Estimator</h2>
+  </div>
+  <table style='width:40%;margin-left:auto;margin-right:auto;'>
+  <tr>
+  <td>
+  <div class = 'container my-4'>
+    <form method = "post" action = "/cropyield" autocomplete='off'>
+    {% csrf_token %}
+    <select class="form-select" name='cn' aria-label="Default select example" style='width:170px;margin-right: 30px;'>
+        <option selected>Crops</option>
+        <option value="1">Paddy</option>
+        <option value="2">Jowar</option>
+        <option value="3">Bajara</option>
+        <option value="4">Maize</option>
+        <option value="5">Cotton</option>
+        <option value="6">Groundnut</option>
+        <option value="7">Soyabean</option>
+        <option value="8">Wheat</option>
+        <option value="9">Barley</option>
+        <option value="10">Gram</option>
+    </select>
+  </td>
+  <td><div>
+    <input type="number" class="form-control" placeholder="Quintal" aria-label="" name='qn' style='width:170px;margin-right:30px;'>
+</div></td>
+  <td>
+    <div class = 'container-fluid' style='width:100%'>
+    <button type="submit" class="btn btn-primary">Submit</button></td></tr></table>
+    {% if cr %}
+      <!--<div class = 'container'>
+      <h5 style="font-weight: bold;">{{cr}}</h5>
+      <h5 style="font-weight: bold;">{{pr}}</h5>
+      <h5 style="font-weight: bold;">{{wt}}</h5>
+      <h5 style="font-weight: bold;width:300px;">{{gd}}</h5>
+      </div>-->
+      <div class='container mx-6 my-2' style='justify-content: center;display: flex;justify-content: center;'>
+        <div class="card" style="width:30rem;">
+            <div class="card-header" style="font-weight: bold;background-color:#adadad;">{{cr}}</div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">{{qn}}</li>
+              <li class="list-group-item">{{pr}}</li>
+              <li class="list-group-item">{{wt}}</li>
+              <li class="list-group-item">{{gd}}</li>
+            </ul>
+        </div>
+        </div>
+    {% endif %}
+  </div>
+  </div>
+</div>
+{% endblock body %}
